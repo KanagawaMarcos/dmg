@@ -21,7 +21,6 @@ namespace GrpcClientCSharp
             );
 
             Console.WriteLine("Greeting: " + reply.Message);
-            Console.WriteLine("");
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
