@@ -1,7 +1,8 @@
-﻿module Library
+﻿namespace Biblioteca
 
 open Newtonsoft.Json
 
-let getJsonNetJson value =
-    let json = JsonConvert.SerializeObject(value)
-    $"I used to be {value} but now I'm {json} thanks to JSON.NET!"
+module Library =
+    let getJsonNetJson value =
+        let json = JsonConvert.SerializeObject(value)
+        $"I used to be {value} but now I'm {json} thanks to JSON.NET!"
