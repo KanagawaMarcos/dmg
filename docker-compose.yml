@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+    database:
+        image: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: foo
+    phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        ports:
+            - 8080:42
+        environment:
+            - PMA_ARBITRARY=1
