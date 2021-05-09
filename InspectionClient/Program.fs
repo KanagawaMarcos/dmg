@@ -1,6 +1,6 @@
 open System
 open Grpc.Net.Client
-open GrpcClientCSharp
+open ProtoBuffers
 open System.Net.Http
 
 [<EntryPoint>]

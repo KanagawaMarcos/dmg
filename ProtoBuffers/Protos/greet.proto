@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "GrpcClientCSharp";
+option csharp_namespace = "ProtoBuffers";
 
 package greet;
 
@@ -19,4 +19,3 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
-
