@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Repository.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fsharp.Data.Npgsql5" Version="1.1.0" />
+  </ItemGroup>
+
+</Project>
