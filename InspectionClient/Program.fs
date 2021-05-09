@@ -1,12 +1,19 @@
 open System
 open Grpc.Net.Client
-
-// Define a function to construct a message to print
-let from whom =
-    sprintf "from %s" whom
+open GrpcClientCSharp
+open System.Net.Http
 
 [<EntryPoint>]
 let main argv =
-    let message = from "F#" // Call the function
-    printfn "Hello world %s" message
-    0 // return an integer exit code
+    let httpHandler = new HttpClientHandler()
+    httpHandler.ServerCertificateCustomValidationCallback <- 
+        HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+    let options = new GrpcChannelOptions()
+    options.HttpHandler <- httpHandler
+    let channel = GrpcChannel.ForAddress("https://localhost:5001", options)
+    let client = new Greeter.GreeterClient(channel)
+    let request = new HelloRequest(Name="Marcos")
+    let reply = client.SayHello(request)
+    
+    printfn "Hello world %s" reply.Message
+    0

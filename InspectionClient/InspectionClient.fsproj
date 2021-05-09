@@ -9,4 +9,12 @@
     <Compile Include="Program.fs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Grpc.Net.Client" Version="2.37.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GrpcClientCSharp\GrpcClientCSharp.csproj" />
+  </ItemGroup>
+
 </Project>
