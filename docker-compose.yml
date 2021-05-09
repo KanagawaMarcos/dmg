@@ -1,8 +1,9 @@
 version: "3.9"
 services:
     database:
-        image: mysql
-        command: --default-authentication-plugin=mysql_native_password
+        image: postgres:12.6
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: foo
+          - POSTGRES_PASSWORD=dmg
+          - POSTGRES_DB=dmg
+          - POSTGRES_USER=dmg

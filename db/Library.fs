@@ -1,8 +1,13 @@
-﻿namespace Biblioteca
+﻿namespace Repository
 
-open Newtonsoft.Json
+open FSharp.Data.Sql
 
-module Library =
-    let getJsonNetJson value =
-        let json = JsonConvert.SerializeObject(value)
-        $"I used to be {value} but now I'm {json} thanks to JSON.NET!"
+module database =
+    [<Literal>]
+    let connection =
+        "Server=localhost;Database=postgres;User=postgres;Password=postgres"
+
+    [<Literal>]
+    let vendor = Common.DatabaseProviderTypes.POSTGRESQL
+
+    type sql = SqlDataProvider<vendor, connection>
