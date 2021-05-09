@@ -25,5 +25,5 @@ module database =
                 (retail, lighting_rate, snow_rate, rooftop_rate)
             VALUES
                 (@retail, @lighting_rate,@snow_rate,@rooftop_rate)">(connection)
-        cmd.Execute(retail=inspection.retail, lighting_rate= inspection.lighting_rate, snow_rate=inspection.snow_rate ,rooftop_rate=inspection.rooftop_rate)
+        cmd.Execute(retail=inspection, lighting_rate= 1, snow_rate=2 ,rooftop_rate=3)
 

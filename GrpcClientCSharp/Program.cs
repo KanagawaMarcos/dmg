@@ -21,7 +21,8 @@ namespace GrpcClientCSharp
                 new HelloRequest { Name = "GreeterClient" }
             );
             Console.WriteLine("Greeting: " + reply.Message);
-            Repository.database.saveInspection("americanas", new List<int> { 1, 2, 3 });
+            //Repository.database.saveInspection("americanas", new List<int> { 1, 2, 3 });
+            Repository.database.saveInspection("americanas");
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
