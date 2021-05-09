@@ -17,5 +17,4 @@
     <ProjectReference Include="..\ProtoBuffers\ProtoBuffers.csproj" />
   </ItemGroup>
 
-
 </Project>
