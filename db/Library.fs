@@ -16,11 +16,14 @@ module database =
         "Host=localhost;Database=dmg;Username=dmg;Password=dmg"
 
     
-    type postgres = NpgsqlConnection<connection>
 
-    use cmd = postgres.CreateCommand<"SELECT * FROM inspections">(postgres)
+    type Postgres = NpgsqlConnection<connection>
 
-    let getInspections = 
-        
-        for inspection in cmd.Execute() do
-            inspection.
+    let saveInspection (inspection : InspectionDTO) = 
+        use cmd = Postgres.CreateCommand<"
+            INSERT INTO inspections 
+                (retail, lighting_rate, snow_rate, rooftop_rate)
+            VALUES
+                ('wallmart', 2,3,1)">(connection)
+        cmd.Execute()
+
