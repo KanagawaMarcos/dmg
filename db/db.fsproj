@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FSharp.Data.Npgsql5" Version="1.1.0" />
     <PackageReference Include="MySql.Data" Version="8.0.24" />
     <PackageReference Include="Npgsql" Version="5.0.4" />
     <PackageReference Include="SQLProvider" Version="1.2.1" />
