@@ -19,11 +19,11 @@ module database =
 
     type Postgres = NpgsqlConnection<connection>
 
-    let saveInspection (inspection : InspectionDTO) = 
+    let saveInspection name (rates : ResizeArray<int>) = 
         use cmd = Postgres.CreateCommand<"
             INSERT INTO inspections 
                 (retail, lighting_rate, snow_rate, rooftop_rate)
             VALUES
-                ('wallmart', 2,3,1)">(connection)
-        cmd.Execute()
+                (@retail, @lighting_rate,@snow_rate,@rooftop_rate)">(connection)
+        cmd.Execute(retail=name, lighting_rate=rates.[0], snow_rate=rates.[1] ,rooftop_rate=rates.[2])
 
