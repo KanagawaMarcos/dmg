@@ -5,7 +5,7 @@ open FSharp.Data.Sql
 module database =
     [<Literal>]
     let connection =
-        "Server=localhost;Database=postgres;User=postgres;Password=postgres"
+        "Host=localhost;Database=dmg;Username=dmg;Password=dmg"
 
     [<Literal>]
     let vendor = Common.DatabaseProviderTypes.POSTGRESQL
