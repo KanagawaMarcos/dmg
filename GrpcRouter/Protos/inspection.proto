@@ -16,13 +16,13 @@ message Inspection {
         GOOD = 2;
     }
     message LightingRate {
-        Rate rate = 1;
+        Rate Rate = 1;
     }
     message SnowRate {
-        Rate rate = 1;
+        Rate Rate = 1;
     }
     message RooftopRate {
-        Rate rate = 1;
+        Rate Rate = 1;
     }
 }
 
