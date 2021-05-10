@@ -10,9 +10,20 @@ service InspectionService {
 
 message Inspection {
     string Retailer = 1;
-    int32 LightingRate = 2;
-    int32 SnowRate = 3;
-    int32 RooftopRate = 4;
+    enum Rate {
+        BAD = 0;
+        AVERAGE = 1;
+        GOOD = 2;
+    }
+    message LightingRate {
+        Rate rate = 1;
+    }
+    message SnowRate {
+        Rate rate = 1;
+    }
+    message RooftopRate {
+        Rate rate = 1;
+    }
 }
 
 message Reply {
