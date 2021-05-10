@@ -11,9 +11,10 @@ let main argv =
     let options = new GrpcChannelOptions()
     options.HttpHandler <- httpHandler
     let channel = GrpcChannel.ForAddress("https://localhost:5001", options)
-    let client = new Greeter.GreeterClient(channel)
-    let request = new HelloRequest(Name="Marcos")
-    let reply = client.SayHello(request)
+
+    let client = new InspectionService.InspectionServiceClient(channel)
+    let inspection = new Inspection(Retailer="Le Biscuit", LightingRate=1,SnowRate=1,RooftopRate=1)
+    let reply = client.Inspect(inspection)
     
-    printfn "Hello world %s" reply.Message
+    printfn "%s" reply.Message
     0

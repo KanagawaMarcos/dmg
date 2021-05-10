@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcRouter";
+
+package inspection;
+
+service InspectionService {
+    rpc Inspect (Inspection) returns (Reply);
+}
+
+message Inspection {
+    string Retailer = 1;
+    int32 LightingRate = 2;
+    int32 SnowRate = 3;
+    int32 RooftopRate = 4;
+}
+
+message Reply {
+    enum Status {
+        ERROR = 0;
+        OK = 1;
+    }
+    string Message = 1;
+}

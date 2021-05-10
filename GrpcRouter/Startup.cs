@@ -31,7 +31,7 @@ namespace GrpcRouter
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<InspectionService>();
 
                 endpoints.MapGet("/", async context =>
                 {
