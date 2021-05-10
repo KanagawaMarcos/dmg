@@ -4,8 +4,8 @@ option csharp_namespace = "GrpcRouter";
 
 package inspection;
 
-service InspectionService {
-    rpc Inspect (Inspection) returns (Reply);
+service Inspector {
+    rpc SaveInspection (Inspection) returns (Reply);
 }
 
 message Inspection {

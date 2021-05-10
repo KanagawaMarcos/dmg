@@ -12,9 +12,10 @@ let main argv =
     options.HttpHandler <- httpHandler
     let channel = GrpcChannel.ForAddress("https://localhost:5001", options)
 
-    let client = new InspectionService.InspectionServiceClient(channel)
-    let inspection = new Inspection(Retailer="Le Biscuit", LightingRate=1,SnowRate=1,RooftopRate=1)
-    let reply = client.Inspect(inspection)
+    let client = new Inspector.InspectorClient(channel)
+    //let inspection = new Inspection(Retailer="Le Biscuit",{LightingRate=1,SnowRate=1,RooftopRate=1})
+    let inspection = new Inspection(Retailer="Le Biscuit")
+    let reply = client.SaveInspection(inspection)
     
     printfn "%s" reply.Message
     0

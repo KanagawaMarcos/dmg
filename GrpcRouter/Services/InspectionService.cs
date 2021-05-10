@@ -7,19 +7,19 @@ using Microsoft.Extensions.Logging;
 
 namespace GrpcRouter
 {
-    public class InspectionService : InspectionService.InspectionServiceBase
+    public class InspectorService : Inspector.InspectorBase
     {
-        private readonly ILogger<InspectionService> _logger;
-        public InspectionService(ILogger<InspectionService> logger)
+        private readonly ILogger<InspectorService> _logger;
+        public InspectorService(ILogger<InspectorService> logger)
         {
             _logger = logger;
         }
 
-        public override Task<Reply> Inspect(Inspection inspection, ServerCallContext context)
+        public override Task<Reply> SaveInspection(Inspection inspection, ServerCallContext context)
         {
             return Task.FromResult(new Reply
             {
-                Message = "The retailer is " + inspection.retail
+                Message = "The retailer is " + inspection.Retailer
             });
         }
     }
