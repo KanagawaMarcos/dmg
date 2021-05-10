@@ -5,10 +5,10 @@ option csharp_namespace = "ProtoBuffers";
 package inspection;
 
 service Inspector {
-    rpc SaveInspection (Inspection) returns (Reply);
+    rpc SaveInspection (InspectionRequest) returns (Reply);
 }
 
-message Inspection {
+message InspectionRequest {
     string Retailer = 1;
     enum Rate {
         BAD = 0;

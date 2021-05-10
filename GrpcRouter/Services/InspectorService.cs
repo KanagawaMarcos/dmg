@@ -15,7 +15,7 @@ namespace GrpcRouter
             _logger = logger;
         }
 
-        public override Task<Reply> SaveInspection(Inspection inspection, ServerCallContext context)
+        public override Task<Reply> SaveInspection(InspectionRequest inspection, ServerCallContext context)
         {
             return Task.FromResult(new Reply
             {
