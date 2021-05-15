@@ -9,15 +9,20 @@ type InspectionDTO = {
     rooftop_rate: int
 }
 
-module database =
+module Database =
     
     [<Literal>]
     let connection =
         "Host=localhost;Database=dmg;Username=dmg;Password=dmg"
 
-    
-
     type Postgres = NpgsqlConnection<connection>
+    let convertToDto retailer snow lighting rooftop = 
+        {
+            retail=retailer
+            snow_rate=snow
+            lighting_rate=lighting
+            rooftop_rate=rooftop
+        }
 
     let saveInspection inspection = 
         use cmd = Postgres.CreateCommand<"
@@ -25,5 +30,5 @@ module database =
                 (retail, lighting_rate, snow_rate, rooftop_rate)
             VALUES
                 (@retail, @lighting_rate,@snow_rate,@rooftop_rate)">(connection)
-        cmd.Execute(retail=inspection, lighting_rate= 1, snow_rate=2 ,rooftop_rate=3)
+        cmd.Execute(retail=inspection.retail, lighting_rate=inspection.lighting_rate, snow_rate=inspection.snow_rate ,rooftop_rate=inspection.rooftop_rate)
 

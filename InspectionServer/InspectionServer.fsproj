@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <PackageReference Include="Fsharp.Data.Npgsql5" Version="1.1.0" />
+    <PackageReference Include="Npgsql" Version="5.0.1.1" />
+    <PackageReference Include="Ply" Version="0.3.1" />
   </ItemGroup>
 
 </Project>
