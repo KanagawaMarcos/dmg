@@ -7,11 +7,15 @@
 
   <ItemGroup>
     <Compile Include="Repository.fs" />
+    <Compile Include="InspectionModel.fs" />
+    <Compile Include="Migrations/*.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Fsharp.Data.Npgsql5" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
     <PackageReference Include="Npgsql" Version="5.0.1.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.6" />
     <PackageReference Include="Ply" Version="0.3.1" />
   </ItemGroup>
 
