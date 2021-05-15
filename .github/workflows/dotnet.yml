@@ -14,8 +14,7 @@ jobs:
         image: postgres:12.6
       env:
         POSTGRES_PASSWORD: dmg
-        POSTGRES_USER: dmg
-        POSTGRES_DB: dmg
+
       # Set health checks to wait until postgres has started
       options: >-
         --health-cmd pg_isready
@@ -33,5 +32,8 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore
+        env:
+          POSTGRES_USER: dmg
+          POSTGRES_DB: dmg
       - name: Test
         run: dotnet test --no-build --verbosity normal
