@@ -20,7 +20,8 @@ namespace GrpcRouter
         {
             try
             {
-                Database.saveInspection(inspection.Retailer);
+                var inspectionDb = Database.convertToDto(inspection.Retailer, (int)inspection.SnowRate, (int)inspection.LightingRate, (int)inspection.RooftopRate);
+                Database.saveInspection(inspectionDb);
             }
             catch (Exception ex)
             {
