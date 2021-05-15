@@ -15,8 +15,6 @@ module database =
     let connection =
         "Host=localhost;Database=dmg;Username=dmg;Password=dmg"
 
-    
-
     type Postgres = NpgsqlConnection<connection>
 
     let saveInspection inspection = 
