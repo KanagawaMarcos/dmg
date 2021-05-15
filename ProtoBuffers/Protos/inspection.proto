@@ -15,15 +15,9 @@ message InspectionRequest {
         AVERAGE = 1;
         GOOD = 2;
     }
-    message LightingRate {
-        Rate Rate = 1;
-    }
-    message SnowRate {
-        Rate Rate = 1;
-    }
-    message RooftopRate {
-        Rate Rate = 1;
-    }
+    Rate LightingRate = 2;
+    Rate SnowRate = 3;
+    Rate RooftopRate = 4;
 }
 
 message Reply {
