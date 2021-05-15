@@ -16,6 +16,7 @@ jobs:
           POSTGRES_PASSWORD: dmg
           POSTGRES_USER: dmg
           POSTGRES_DB: dmg
+          POSTGRES_PORT: 5432
 
       # Set health checks to wait until postgres has started
       options: >-
