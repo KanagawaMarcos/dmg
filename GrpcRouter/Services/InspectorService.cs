@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
-using Repository;
+using InspectionServer.Repository;
 
 namespace GrpcRouter
 {
@@ -18,9 +18,9 @@ namespace GrpcRouter
 
         public override Task<Reply> SaveInspection(InspectionRequest inspection, ServerCallContext context)
         {
+            var inspectionDb = Dtos.toInspectionDto(inspection.Retailer, (int)inspection.SnowRate, (int)inspection.LightingRate, (int)inspection.RooftopRate);
             try
             {
-                var inspectionDb = Database.convertToDto(inspection.Retailer, (int)inspection.SnowRate, (int)inspection.LightingRate, (int)inspection.RooftopRate);
                 Database.saveInspection(inspectionDb);
             }
             catch (Exception ex)
