@@ -7,9 +7,9 @@ This project is a study case to gRPC + F#, the scenario is, an inspector goes to
 
 ## Stack
 - F#
--- Type Providers
--- Entity Framework
--- Fantomas
+    - Type Providers
+    - Entity Framework
+    - Fantomas
 - gRPC
 - Postgres
 - Docker
@@ -45,6 +45,7 @@ from the root of the project
         - Spend too much time figuring out how to manage the DLLs when I had paket to do it like modern package managers do such as pip, npm etc.
     - Didn't had time to add kafka to the project, and it would be really nice to increase my chances on DMG.
     - Most of the time were spent on bootstraping stuff. Thus, last time on business logic.
+    - Time budget totally spent before properly handling security like postgres credentils. Next project gotta do this from day 0.
     - Didn't had time to introduce Computations Expressions at some point to showcase FP skills. (too much simple of project, didn't need anything fancy tbh)
     - Could have added testing to the project, even that fancy lib of algebric auto generated tests. (looks promissing for the next weekend study case)
 ### Where I got lucky
