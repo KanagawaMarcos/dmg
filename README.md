@@ -3,7 +3,7 @@
 DMG Divisions provides a platform to help retailers thrive.
 One of the services provides is **inspections**. 
 
-This project is a study case to gRPC + F#, the scenario is, an inspector goes to a retailer and give 3 rates for lighting, snow removal and rooftop maintenance. Those rates range from, BAD, AVERAGE, GOOD.
+This project is a study case to gRPC + F#, the scenario is, an inspector goes to a retailer and gives 3 rates for lighting, snow removal, and rooftop maintenance. Those rates range from, BAD, AVERAGE, GOOD.
 
 ## Stack
 - F#
@@ -14,7 +14,7 @@ This project is a study case to gRPC + F#, the scenario is, an inspector goes to
 - Postgres
 - Docker
 
-Originally I was planing to add kafka to the study case but hit the time budget I've set for this project.
+Originally I was planning to add Kafka to the study case but hit the time budget I've set for this project.
 
 ## How to run 
 
