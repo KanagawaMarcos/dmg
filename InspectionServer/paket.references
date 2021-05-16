@@ -1,0 +1,9 @@
+EntityFrameworkCore.FSharp
+Fsharp.Data.Npgsql5
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Relational
+Npgsql
+Npgsql.EntityFrameworkCore.PostgreSQL
+Ply
+FSharp.Core

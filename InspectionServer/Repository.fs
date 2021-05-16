@@ -26,7 +26,7 @@ module Database =
     let saveInspection inspection =
         use cmd =
             Postgres.CreateCommand<"
-            INSERT INTO inspections
+            INSERT INTO \"Inspections\"
                 (retail, lighting_rate, snow_rate, rooftop_rate)
             VALUES
                 (@retail, @lighting_rate,@snow_rate,@rooftop_rate)">(

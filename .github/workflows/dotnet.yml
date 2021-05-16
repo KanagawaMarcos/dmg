@@ -29,7 +29,9 @@ jobs:
       - name: Lint codebase
         run: dotnet tool install -g fantomas-tool && fantomas --recurse --check .
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet tool restore && dotnet restore
+      - name: Migrations
+        run: cd InspectionServer && dotnet ef database update
       - name: Build
         run: dotnet build --no-restore
       - name: Test
