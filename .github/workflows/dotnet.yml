@@ -31,7 +31,7 @@ jobs:
       - name: Restore dependencies
         run: dotnet tool restore && dotnet restore
       - name: Migrations
-        run: dotnet ef database update
+        run: cd InspectionServer && dotnet ef database update
       - name: Build
         run: dotnet build --no-restore
       - name: Test
