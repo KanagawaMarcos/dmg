@@ -1,0 +1,9 @@
+source https://www.nuget.org/api/v2
+
+nuget FSharp.Core
+nuget EntityFrameworkCore.FSharp
+nuget Fsharp.Data.Npgsql5 1.1.0
+nuget Microsoft.EntityFrameworkCore 
+nuget Npgsql 5.0.5
+nuget Npgsql.EntityFrameworkCore.PostgreSQL 5.0.6
+nuget Ply 0.3.1
