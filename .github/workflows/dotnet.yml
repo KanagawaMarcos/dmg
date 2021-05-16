@@ -33,6 +33,6 @@ jobs:
       - name: Migrations
         run: cd InspectionServer && mv db/Repository.fs . && dotnet ef database update && mv Repository.fs db/
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet clean && dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --verbosity normal
