@@ -19,7 +19,7 @@ Originally I was planing to add kafka to the study case but hit the time budget 
 ## How to run 
 
 From the root of the project
-1. docker-compose up -d database
+1. `docker-compose up -d database`
 2. [Follow the instructions on the CI Workflow](https://github.com/Marcos-Costa/dmg/blob/main/.github/workflows/dotnet.yml)
 
 ## Project's Retrospective/Postmortem
