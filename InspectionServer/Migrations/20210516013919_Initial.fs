@@ -13,69 +13,65 @@ open Microsoft.EntityFrameworkCore.Storage.ValueConversion
 type Initial() =
     inherit Migration()
 
-    override this.Up(migrationBuilder:MigrationBuilder) =
+    override this.Up(migrationBuilder: MigrationBuilder) =
         migrationBuilder.CreateTable(
-            name = "Inspections"
-            ,columns = (fun table -> 
-            {|
-                Retail =
-                    table.Column<string>(
-                        nullable = false
-                        ,``type`` = "text"
-                    )
-                SnowRate =
-                    table.Column<int>(
-                        nullable = false
-                        ,``type`` = "integer"
-                    )
-                LightingRate =
-                    table.Column<int>(
-                        nullable = false
-                        ,``type`` = "integer"
-                    )
-                RooftopRate =
-                    table.Column<int>(
-                        nullable = false
-                        ,``type`` = "integer"
-                    )
-            |})
-            ,constraints =
-                (fun table -> 
-                    table.PrimaryKey("PK_Inspections", (fun x -> (x.Retail) :> obj)) |> ignore
-                ) 
-        ) |> ignore
+            name = "Inspections",
+            columns =
+                (fun table ->
+                    {| Retail = table.Column<string>(nullable = false, ``type`` = "text")
+                       SnowRate = table.Column<int>(nullable = false, ``type`` = "integer")
+                       LightingRate = table.Column<int>(nullable = false, ``type`` = "integer")
+                       RooftopRate = table.Column<int>(nullable = false, ``type`` = "integer") |}),
+            constraints =
+                (fun table ->
+                    table.PrimaryKey("PK_Inspections", (fun x -> (x.Retail) :> obj))
+                    |> ignore)
+        )
+        |> ignore
 
 
-    override this.Down(migrationBuilder:MigrationBuilder) =
-        migrationBuilder.DropTable(
-            name = "Inspections"
-            ) |> ignore
+    override this.Down(migrationBuilder: MigrationBuilder) =
+        migrationBuilder.DropTable(name = "Inspections")
+        |> ignore
 
 
     override this.BuildTargetModel(modelBuilder: ModelBuilder) =
         modelBuilder
 
-            .UseIdentityByDefaultColumns().HasAnnotation("Relational:MaxIdentifierLength", 63)
+            .UseIdentityByDefaultColumns()
+            .HasAnnotation("Relational:MaxIdentifierLength", 63)
             .HasAnnotation("ProductVersion", "5.0.6")
-            |> ignore
+        |> ignore
 
-        modelBuilder.Entity("InspectionModel+Inspections", (fun b ->
+        modelBuilder.Entity(
+            "InspectionModel+Inspections",
+            (fun b ->
 
-            b.Property<string>("Retail")
-                .HasColumnType("text") |> ignore
-            b.Property<int>("LightingRate")
-                .IsRequired()
-                .HasColumnType("integer") |> ignore
-            b.Property<int>("RooftopRate")
-                .IsRequired()
-                .HasColumnType("integer") |> ignore
-            b.Property<int>("SnowRate")
-                .IsRequired()
-                .HasColumnType("integer") |> ignore
+                b.Property<string>("Retail").HasColumnType("text")
+                |> ignore
 
-            b.HasKey("Retail") |> ignore
+                b
+                    .Property<int>("LightingRate")
+                    .IsRequired()
+                    .HasColumnType("integer")
+                |> ignore
 
-            b.ToTable("Inspections") |> ignore
+                b
+                    .Property<int>("RooftopRate")
+                    .IsRequired()
+                    .HasColumnType("integer")
+                |> ignore
 
-        )) |> ignore
+                b
+                    .Property<int>("SnowRate")
+                    .IsRequired()
+                    .HasColumnType("integer")
+                |> ignore
 
+                b.HasKey("Retail") |> ignore
+
+                b.ToTable("Inspections") |> ignore
+
+                )
+        )
+        |> ignore

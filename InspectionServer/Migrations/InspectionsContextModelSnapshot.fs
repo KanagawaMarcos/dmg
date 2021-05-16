@@ -16,27 +16,40 @@ type InspectionsContextModelSnapshot() =
     override this.BuildModel(modelBuilder: ModelBuilder) =
         modelBuilder
 
-            .UseIdentityByDefaultColumns().HasAnnotation("Relational:MaxIdentifierLength", 63)
+            .UseIdentityByDefaultColumns()
+            .HasAnnotation("Relational:MaxIdentifierLength", 63)
             .HasAnnotation("ProductVersion", "5.0.6")
-            |> ignore
+        |> ignore
 
-        modelBuilder.Entity("InspectionModel+inspections", (fun b ->
+        modelBuilder.Entity(
+            "InspectionModel+inspections",
+            (fun b ->
 
-            b.Property<string>("retail")
-                .HasColumnType("text") |> ignore
-            b.Property<int>("lighting_rate")
-                .IsRequired()
-                .HasColumnType("integer") |> ignore
-            b.Property<int>("rooftop_rate")
-                .IsRequired()
-                .HasColumnType("integer") |> ignore
-            b.Property<int>("snow_rate")
-                .IsRequired()
-                .HasColumnType("integer") |> ignore
+                b.Property<string>("retail").HasColumnType("text")
+                |> ignore
 
-            b.HasKey("retail") |> ignore
+                b
+                    .Property<int>("lighting_rate")
+                    .IsRequired()
+                    .HasColumnType("integer")
+                |> ignore
 
-            b.ToTable("Inspections") |> ignore
+                b
+                    .Property<int>("rooftop_rate")
+                    .IsRequired()
+                    .HasColumnType("integer")
+                |> ignore
 
-        )) |> ignore
+                b
+                    .Property<int>("snow_rate")
+                    .IsRequired()
+                    .HasColumnType("integer")
+                |> ignore
 
+                b.HasKey("retail") |> ignore
+
+                b.ToTable("Inspections") |> ignore
+
+                )
+        )
+        |> ignore
