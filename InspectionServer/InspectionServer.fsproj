@@ -5,8 +5,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Repository.fs" />
     <Compile Include="InspectionModel.fs" />
+    <Compile Include="db/*.fs" />
     <Compile Include="Migrations/*.fs" />
   </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />
