@@ -3,6 +3,7 @@ module InspectionModel
 open System.ComponentModel.DataAnnotations
 open Microsoft.EntityFrameworkCore
 
+[<CLIMutable>]
 type Inspections = {
     Retail: string
     SnowRate: int
